@@ -1,9 +1,12 @@
-class TextDataProcessor:
+class DataExtractor:
+    """
+    This is class extract special characters from input data
+    """
 
     @staticmethod
-    def load_from_resource(file):
-        list_from_resource = []
-        for line in file:
+    def extract_special_char(list_from_resource):
+        data_list = []
+        for line in list_from_resource:
             line = line.replace("\n", ",")
             line = line.replace("#", "")
             line = line.replace(",", "")
@@ -11,5 +14,5 @@ class TextDataProcessor:
             line = line.replace("--", "")
             line = line.replace("!", "")
             line = line.lstrip()
-            list_from_resource.append(line)
-        return list_from_resource
+            data_list.append(line)
+        return data_list
