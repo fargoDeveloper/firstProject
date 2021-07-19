@@ -11,13 +11,13 @@ class TextDataProcessorApp:
 
     @staticmethod
     def run_app():
-        name_file = "testFile.txt"
+        name_file = "file.txt"
         letter = "c"
         data_list = de.extract_special_char(rl.load_from_file(name_file))
 
         # Count of letter 'c' into sentence
         print()
-        print("№1. Count of letter 'c' into sentence: ", ch.count_letter(data_list, letter), "pc.")
+        print("№1. Count of letter", "\'", letter, "\'", "into sentence: ", ch.count_letter(data_list, letter), "pc.")
         print("--------------------------------------------------")
 
         # Get the most unpopular character
