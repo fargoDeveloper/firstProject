@@ -1,12 +1,16 @@
-class DataExtractor:
-    """
-    This is class extract special characters from input data
-    """
+"""
+This is class extract special characters from input data
+"""
 
-    @staticmethod
-    def extract_special_char(list_from_resource):
+
+class DataExtractor:
+
+    def __init__(self, list_from_resource):
+        self.list_from_resource = list_from_resource
+
+    def extract_special_char(self):
         data_list = []
-        for line in list_from_resource:
+        for line in self.list_from_resource:
             line = line.replace("\n", ",")
             line = line.replace("#", "")
             line = line.replace(",", "")

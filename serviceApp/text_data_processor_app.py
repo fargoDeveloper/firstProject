@@ -1,8 +1,8 @@
 """
 This module has the class launches the application for execution.
 """
-from resource_loader import ResourceLoader as rl
-from data_extractor import DataExtractor as de
+from resource_loader import ResourceLoader
+from data_extractor import DataExtractor
 from character_handler import CharacterHandler as ch
 from words_handler import WordsHandler as wh
 
@@ -10,7 +10,11 @@ from words_handler import WordsHandler as wh
 def run_app():
     name_file = "file.txt"
     letter = "c"
-    data_list = de.extract_special_char(rl.load_from_file(name_file))
+
+    # Preparation of data for processing
+    rl = ResourceLoader(name_file)
+    de = DataExtractor(rl.load_from_file())
+    data_list = de.extract_special_char()
 
     # Count of letter 'c' into sentence
     print()
