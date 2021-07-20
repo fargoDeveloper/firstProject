@@ -1,26 +1,30 @@
+"""
+This is module has the class handler the characters from the input resource
+"""
+
 import re
 
 
 class CharacterHandler:
-    """
-    This is class handler the characters from the input resource
-    """
+
+    def __init__(self):
+        pass
 
     @staticmethod
     # Count of letter 'c' into sentence
     def count_letter(data_list, letter):
-        dict_letters = {}
+        dict_characters = {}
         list_characters = []
 
         for line_list in data_list:
             list_characters.extend(re.findall(r'\w', line_list))
 
         for unit in list_characters:
-            if unit in dict_letters:
-                dict_letters[unit] += 1
+            if unit in dict_characters:
+                dict_characters[unit] += 1
             else:
-                dict_letters[unit] = 1
-        return dict_letters[letter]
+                dict_characters[unit] = 1
+        return dict_characters[letter]
 
     @staticmethod
     # Get the most unpopular character
