@@ -7,9 +7,6 @@ import re
 
 class CharacterHandler:
 
-    def __init__(self):
-        pass
-
     @staticmethod
     # Count of letter 'c' into sentence
     def count_letter(data_list, letter):

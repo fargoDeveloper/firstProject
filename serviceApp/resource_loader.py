@@ -5,7 +5,7 @@ This is module load data from the input resource
 
 class ResourceLoader:
 
-    def __init__(self, name_file):
+    def __init__(self, name_file: str):
         self.name_file = name_file
 
     def load_from_file(self):
